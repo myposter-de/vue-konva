@@ -8,6 +8,7 @@ import {
 } from '../utils';
 
 const EventEmitter = require('events');
+const konva = require('konva');
 
 const EVENTS_NAMESPACE = '.vue-konva-event';
 
@@ -92,7 +93,7 @@ export default function() {
         const vm = this;
         const tagName = this.name;
         const nameNode = getName(tagName);
-        const NodeClass = window.Konva[nameNode];
+        const NodeClass = konva[nameNode];
 
         if (!NodeClass) {
           console.error('vue-konva error: Can not find node ' + nameNode);

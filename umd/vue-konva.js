@@ -4,14 +4,14 @@
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("vue"), require("konva"));
+		module.exports = factory(require("konva"), require("vue"));
 	else if(typeof define === 'function' && define.amd)
-		define(["vue", "konva"], factory);
+		define(["konva", "vue"], factory);
 	else if(typeof exports === 'object')
-		exports["VueKonva"] = factory(require("vue"), require("konva"));
+		exports["VueKonva"] = factory(require("konva"), require("vue"));
 	else
-		root["VueKonva"] = factory(root["Vue"], root["Konva"]);
-})(window, function(__WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__3__) {
+		root["VueKonva"] = factory(root["Konva"], root["Vue"]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__2__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -95,7 +95,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -561,16 +561,16 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(4);
 
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__3__;
 
 /***/ }),
 /* 4 */
@@ -580,7 +580,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__3__;
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: external {"root":"Vue","commonjs2":"vue","commonjs":"vue","amd":"vue"}
-var external_root_Vue_commonjs2_vue_commonjs_vue_amd_vue_ = __webpack_require__(1);
+var external_root_Vue_commonjs2_vue_commonjs_vue_amd_vue_ = __webpack_require__(2);
 var external_root_Vue_commonjs2_vue_commonjs_vue_amd_vue_default = /*#__PURE__*/__webpack_require__.n(external_root_Vue_commonjs2_vue_commonjs_vue_amd_vue_);
 
 // CONCATENATED MODULE: ./src/utils/updatePicture.js
@@ -733,6 +733,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var EventEmitter = __webpack_require__(0);
+var konva = __webpack_require__(1);
 
 var Stage_StageEmitter = function (_EventEmitter) {
   _inherits(StageEmitter, _EventEmitter);
@@ -771,7 +772,7 @@ var cacheConfig = {};
     this._stage = {};
   },
   mounted: function mounted() {
-    this._stage = new window.Konva.Stage({
+    this._stage = new konva.Stage({
       width: this.config.width,
       height: this.config.height,
       container: this.$el
@@ -812,6 +813,7 @@ function KonvaNode_inherits(subClass, superClass) { if (typeof superClass !== "f
 
 
 var KonvaNode_EventEmitter = __webpack_require__(0);
+var KonvaNode_konva = __webpack_require__(1);
 
 var KonvaNode_EVENTS_NAMESPACE = '.vue-konva-event';
 
@@ -914,7 +916,7 @@ var KonvaNode_EVENTS_NAMESPACE = '.vue-konva-event';
         var vm = this;
         var tagName = this.name;
         var nameNode = getName(tagName);
-        var NodeClass = window.Konva[nameNode];
+        var NodeClass = KonvaNode_konva[nameNode];
 
         if (!NodeClass) {
           console.error('vue-konva error: Can not find node ' + nameNode);
@@ -959,9 +961,9 @@ var src_extends = Object.assign || function (target) { for (var i = 1; i < argum
 
 
 
-if (typeof window !== 'undefined' && !window.Konva) {
-  __webpack_require__(3);
-}
+// if (typeof window !== 'undefined' && !window.Konva) {
+//   require('konva');
+// }
 
 var KONVA_NODES = ['Layer', 'FastLayer', 'Group', 'Label', 'Rect', 'Circle', 'Ellipse', 'Wedge', 'Line', 'Sprite', 'Image', 'Text', 'TextPath', 'Star', 'Ring', 'Arc', 'Tag', 'Path', 'RegularPolygon', 'Arrow', 'Shape', 'Transformer'];
 var components = {

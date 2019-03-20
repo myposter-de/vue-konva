@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import { applyNodeProps, createListener } from '../utils';
 const EventEmitter = require('events');
+const konva = require('konva');
 
 class StageEmitter extends EventEmitter {}
 
@@ -29,7 +30,7 @@ export default Vue.component('v-stage', {
     this._stage = {};
   },
   mounted() {
-    this._stage = new window.Konva.Stage({
+    this._stage = new konva.Stage({
       width: this.config.width,
       height: this.config.height,
       container: this.$el

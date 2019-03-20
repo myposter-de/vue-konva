@@ -2,9 +2,9 @@ import Stage from './components/Stage';
 import KonvaNode from './components/KonvaNode';
 import { componentPrefix } from './utils';
 
-if (typeof window !== 'undefined' && !window.Konva) {
-  require('konva');
-}
+// if (typeof window !== 'undefined' && !window.Konva) {
+//   require('konva');
+// }
 
 const KONVA_NODES = [
   'Layer',
